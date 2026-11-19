@@ -95,4 +95,28 @@ public class PeopleController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message); // Will return 500 internal server error + message in the response body
         }
     }
+
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeletePerson(int id)
+    {
+        try
+        {
+            var person = await _context.People.FindAsync(id);
+
+            if (person is null)
+            {
+                return NotFound(); // 404 status code;
+            }
+
+
+            _context.People.Remove(person);
+            await _context.SaveChangesAsync();
+            return NoContent(); // just returning 204 status.
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, ex.Message); // Will return 500 internal server error + message in the response body
+        }
+    }
 }
