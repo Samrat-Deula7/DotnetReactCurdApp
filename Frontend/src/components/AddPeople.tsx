@@ -1,11 +1,5 @@
-import React from 'react'
+import PersonForm from "./PersonForm";
 
-const AddPeople = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function AddPeople() {
+  return <PersonForm method="POST" />;
 }
-
-export default AddPeople

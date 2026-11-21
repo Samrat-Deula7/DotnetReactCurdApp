@@ -1,11 +1,5 @@
-import React from 'react'
+import PersonForm from "./PersonForm";
 
-const DeletePeopleById = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function DeletePeopleById() {
+  return <PersonForm method="DELETE" />;
 }
-
-export default DeletePeopleById

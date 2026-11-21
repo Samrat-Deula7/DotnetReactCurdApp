@@ -1,11 +1,5 @@
-import React from 'react'
+import PersonForm from "./PersonForm";
 
-const GetPeopleById = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function GetPeopleById() {
+  return <PersonForm method="GET" />;
 }
-
-export default GetPeopleById
